@@ -14,9 +14,9 @@ html {
     font-size: 87,5%;
 }
 
-    .wrapper{
-        grid-template-columns: 1fr;
-    }
+.wrapper{
+    grid-template-columns: 1fr;
+}
 }
 
 /* 16 -> 100%
