@@ -9,7 +9,7 @@ import styles from './Post.module.css';
 
 export function Post({ author, publishedAt, content }) {
     const [comments, setComments] = useState([
-        'Post dahora'
+        'Post muito bom, viu!'
     ])
 
     const [newCommentText, setNewCommentText] = useState('')
@@ -34,8 +34,11 @@ export function Post({ author, publishedAt, content }) {
        setNewCommentText(event.target.value);
     }
 
-    function deleteComment(comment) {
-        console.log(`Deletar comentario ${comment}`)
+    function deleteComment(commentToDelete) {
+        const commentsWithoutDeletedOne = comments.filter(comment => {
+            return comment !== commentToDelete
+        })
+        setComments(commentsWithoutDeletedOne);
     }
 
     return (
@@ -89,7 +92,6 @@ export function Post({ author, publishedAt, content }) {
                         />
                     )
                 })}
-                
             </div>
 
         </article>
