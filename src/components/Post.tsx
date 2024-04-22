@@ -18,12 +18,15 @@ interface Content {
     content: string;
 }
 
-interface PostProps {
+export interface PostType {
     author: Author;
     publishedAt: Date;
     content: Content[];
 }
 
+interface PostProps {
+    post: PostType;
+}
 
 export function Post({ author, publishedAt, content } : PostProps) {
     const [comments, setComments] = useState([
